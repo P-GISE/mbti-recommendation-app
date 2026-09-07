@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 앱 전용 외부 저장소 Pictures 디렉토리 -->
+    <external-files-path
+        name="screenshots"
+        path="Pictures/MBTI_Screenshots/" />
+
+    <!-- 앱 전용 외부 저장소 전체 -->
+    <external-files-path
+        name="external_app_files"
+        path="." />
+
+    <!-- 캐시 디렉토리 -->
+    <external-cache-path
+        name="external_cache"
+        path="." />
+
+</paths>

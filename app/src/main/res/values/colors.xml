@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 기본 테마 색상 -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- 앱 전용 색상 -->
+    <color name="primary_color">#FF000000</color>
+    <color name="primary_light">#FF616161</color>
+    <color name="primary_dark">#FF000000</color>
+    <color name="accent_color">#FFBDBDBD</color>
+
+    <!-- 배경 색상 -->
+    <color name="background_color">#FFFFFFFF</color>
+    <color name="card_background">#FFFFFFFF</color>
+
+    <!-- 텍스트 색상 -->
+    <color name="primary_text">#FF000000</color>
+    <color name="secondary_text">#FF616161</color>
+    <color name="text_light">#FFFFFFFF</color>
+    <color name="text_dark">#FF000000</color>
+
+    <!-- 버튼 색상 -->
+    <color name="button_primary">#FF000000</color>
+    <color name="button_primary_light">#FF616161</color>
+    <color name="button_primary_dark">#FF000000</color>
+    <color name="button_secondary">#FFE0E0E0</color>
+    <color name="button_secondary_light">#FFEEEEEE</color>
+    <color name="button_secondary_dark">#FFBDBDBD</color>
+    <color name="button_outline">#FFBDBDBD</color>
+    <color name="button_accent">#FF616161</color>
+
+    <!-- 진행률 색상 -->
+    <color name="progress_background">#FFE0E0E0</color>
+    <color name="progress_foreground">#FF000000</color>
+
+    <!-- 상태 색상 -->
+    <color name="success_color">#FF616161</color>
+    <color name="success_light">#FF81C784</color>
+    <color name="success_dark">#FF388E3C</color>
+    <color name="warning_color">#FFBDBDBD</color>
+    <color name="warning_light">#FFFFB74D</color>
+    <color name="warning_dark">#FFF57C00</color>
+    <color name="error_color">#FF616161</color>
+    <color name="error_light">#FFEF5350</color>
+    <color name="error_dark">#FFD32F2F</color>
+    <color name="info_color">#FFBDBDBD</color>
+    <color name="info_light">#FF64B5F6</color>
+    <color name="info_dark">#FF1976D2</color>
+
+    <!-- 카테고리별 색상 -->
+    <color name="baseball_color">#FF4CAF50</color>
+    <color name="baseball_light">#FF81C784</color>
+    <color name="baseball_dark">#FF388E3C</color>
+    <color name="game_color">#FF9C27B0</color>
+    <color name="game_light">#FFBA68C8</color>
+    <color name="game_dark">#FF7B1FA2</color>
+    <color name="movie_color">#FFFF5722</color>
+    <color name="movie_light">#FFFF8A65</color>
+    <color name="movie_dark">#FFE64A19</color>
+    <color name="travel_color">#FF00BCD4</color>
+    <color name="travel_light">#FF4DD0E1</color>
+    <color name="travel_dark">#FF0097A7</color>
+
+    <!-- 그라데이션 색상 -->
+    <color name="gradient_start">#FFFFFFFF</color>
+    <color name="gradient_center">#FFBDBDBD</color>
+    <color name="gradient_end">#FF000000</color>
+
+    <!-- 반투명 색상 -->
+    <color name="overlay_dark">#80000000</color>
+    <color name="overlay_light">#80FFFFFF</color>
+    <color name="overlay_primary">#80000000</color>
+    <color name="overlay_accent">#80BDBDBD</color>
+
+    <!-- 추가 유틸리티 색상 -->
+    <color name="divider_color">#FFE0E0E0</color>
+    <color name="ripple_color">#1F000000</color>
+    <color name="shadow_color">#33000000</color>
+    <color name="highlight_color">#1FFFFFFF</color>
+
+    <!-- Material Design 호환 색상 -->
+    <color name="colorPrimary">@color/primary_color</color>
+    <color name="colorPrimaryVariant">@color/primary_dark</color>
+    <color name="colorOnPrimary">@color/text_light</color>
+    <color name="colorSecondary">@color/accent_color</color>
+    <color name="colorSecondaryVariant">@color/accent_color</color>
+    <color name="colorOnSecondary">@color/text_light</color>
+    <color name="colorError">@color/error_color</color>
+    <color name="colorOnError">@color/text_light</color>
+    <color name="colorSurface">@color/card_background</color>
+    <color name="colorOnSurface">@color/primary_text</color>
+    <color name="colorBackground">@color/background_color</color>
+    <color name="colorOnBackground">@color/primary_text</color>
+
+    <!-- 중복 방지: 아래 색상들은 한 번만 선언 -->
+    <color name="primary">#FF6200EE</color>
+    <color name="primary_variant">#FF3700B3</color>
+    <color name="secondary">#FF03DAC5</color>
+    <color name="secondary_variant">#FF018786</color>
+    <color name="gray_light">#FFE0E0E0</color>
+    <color name="gray">#FFBDBDBD</color>
+    <color name="gray_dark">#FF616161</color>
+    <color name="error">#FFB00020</color>
+    <color name="warning">#FFFFC107</color>
+    <color name="info">#FF2196F3</color>
+</resources>

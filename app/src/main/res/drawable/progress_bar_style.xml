@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 배경 -->
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="#E2E8F0" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+
+    <!-- 진행률 -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <gradient
+                    android:startColor="#667EEA"
+                    android:endColor="#764BA2"
+                    android:type="linear" />
+                <corners android:radius="4dp" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="24dp"
+    tools:context=".QuestionActivity">
+
+    <!-- 상단 헤더 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|end"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <!-- 카테고리 및 진행상태 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="야구구단 추천"
+                android:textSize="20sp"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_question_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1/10"
+                android:textSize="14sp"
+                android:textColor="@color/secondary_text"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <!-- 뒤로가기 버튼 -->
+        <TextView
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="Back"
+            android:textSize="15sp"
+            android:textColor="@color/primary_text"
+            android:gravity="center"
+            android:background="@drawable/back_button_bg"
+            android:layout_marginEnd="16dp" />
+    </LinearLayout>
+
+    <!-- 진행률 바 -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:progressDrawable="@drawable/progress_bar_style"
+        android:progress="1"
+        android:max="10" />
+
+    <!-- 질문 컨테이너 -->
+    <LinearLayout
+        android:id="@+id/question_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- 질문 카드 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="32dp"
+                android:gravity="center">
+
+                <!-- 질문 아이콘 -->
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:text="❓"
+                    android:textSize="48sp"
+                    android:gravity="center"
+                    android:background="@drawable/question_icon_bg"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- 질문 텍스트 -->
+                <TextView
+                    android:id="@+id/tv_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="경기를 볼 때 어떤 것을 더 중요하게 생각하나요?"
+                    android:textSize="20sp"
+                    android:textColor="@color/primary_text"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:lineSpacingExtra="6dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 답변 버튼들 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 답변 1 -->
+            <Button
+                android:id="@+id/btn_answer1"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="화려한 플레이와 스타플레이어"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:background="@drawable/button_outline"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:elevation="4dp" />
+
+            <!-- 답변 2 -->
+            <Button
+                android:id="@+id/btn_answer2"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="팀워크와 전략적 플레이"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:background="@drawable/button_filled"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:elevation="4dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 하단 도움말 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="💡 직감적으로 선택해주세요. 정답은 없습니다!"
+        android:textSize="13sp"
+        android:textColor="@color/secondary_text"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>
