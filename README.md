@@ -4,6 +4,26 @@
 
 단순한 MBTI 유형 출력이 아니라 카테고리별 질문과 결과 상세 화면, 스크린샷 저장/공유 흐름을 포함한 모바일 추천 앱으로 구성했습니다.
 
+## 한눈에 보기
+
+| 항목 | 내용 |
+| --- | --- |
+| 한국어 프로젝트명 | MBTI 추천 앱 |
+| 저장소 성격 | Java 기반 Android 네이티브 앱 |
+| 주요 사용자 | 간단한 성향 테스트와 추천 결과를 보고 싶은 모바일 사용자 |
+| 실행 형태 | Android Studio 또는 Gradle debug APK 빌드 |
+| 데이터 저장 | 별도 서버 없이 앱 내부 질문/결과 데이터 사용 |
+| 공유 기능 | 결과 화면 캡처 후 Android 공유 Intent 사용 |
+
+## 앱 사용 흐름
+
+1. 메인 화면에서 테스트 시작 버튼을 누릅니다.
+2. 야구 구단, 게임 포지션, 영화 장르, 여행지 중 하나의 카테고리를 선택합니다.
+3. 앱이 해당 카테고리의 질문 후보 중 10개를 무작위로 보여줍니다.
+4. 사용자는 두 선택지 중 하나를 고르며 성향 점수를 쌓습니다.
+5. 결과 화면에서 추천 항목, 설명, 특징, 궁합 정보를 확인합니다.
+6. 상세 보기로 더 긴 설명을 보거나, 결과 화면을 이미지로 저장/공유합니다.
+
 ## 주요 기능
 
 - 야구 구단, 게임 포지션, 영화 장르, 여행지 추천 카테고리
@@ -40,6 +60,16 @@ MBTI/
     values/                 색상, 문자열, 테마
 ```
 
+## 화면 구성
+
+| Activity | 역할 |
+| --- | --- |
+| `MainActivity` | 앱 첫 화면과 시작 진입점 |
+| `CategoryActivity` | 추천 카테고리 선택 |
+| `QuestionActivity` | 질문 표시, 답변 수집, 진행률 표시 |
+| `ResultActivity` | 추천 결과 계산, 요약 표시, 캡처/공유 |
+| `DetailActivity` | 결과별 상세 설명 표시 |
+
 ## 실행 방법
 
 1. Android Studio에서 `MBTI/` 폴더를 엽니다.
@@ -59,6 +89,15 @@ Windows PowerShell에서는:
 .\gradlew.bat assembleDebug
 ```
 
+빌드 결과는 일반적으로 `app/build/outputs/apk/debug/` 아래에 생성됩니다.
+
+## 권한과 공유 방식
+
+- `INTERNET`: 공유/외부 기능 확장을 고려한 기본 권한입니다.
+- `WRITE_EXTERNAL_STORAGE`: Android 12 이하에서 결과 스크린샷 저장에 사용합니다.
+- `READ_MEDIA_IMAGES`: Android 13 이상 이미지 접근 정책에 대응합니다.
+- `FileProvider`: 캡처한 결과 이미지를 다른 앱에 안전하게 전달하기 위해 사용합니다.
+
 ## 구현 포인트
 
 - 추천 카테고리마다 질문과 결과 매핑을 분리해 확장할 수 있게 구성했습니다.
@@ -72,6 +111,20 @@ Windows PowerShell에서는:
 - 결과 알고리즘 테스트 추가
 - Material3 기반 UI 정리
 - 다크 모드와 태블릿 레이아웃 대응
+
+## 검증 방법
+
+```bash
+./gradlew test
+./gradlew assembleDebug
+```
+
+Windows PowerShell:
+
+```powershell
+.\gradlew.bat test
+.\gradlew.bat assembleDebug
+```
 
 ## GitHub 업로드 전 주의
 
