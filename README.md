@@ -15,6 +15,32 @@
 | 데이터 저장 | 별도 서버 없이 앱 내부 질문/결과 데이터 사용 |
 | 공유 기능 | 결과 화면 캡처 후 Android 공유 Intent 사용 |
 
+## 소스 검토 기준
+
+이 README는 `app/src/main/AndroidManifest.xml`, `app/build.gradle`, `app/src/main/java/kr/ac/mjc/mbti`, `app/src/main/res/layout`, `app/src/main/res/drawable`, `app/src/main/res/menu`를 기준으로 다시 작성했습니다. Android Studio가 생성한 기본 예제 테스트와 빌드 산출물은 기능 설명의 근거로 보지 않았습니다.
+
+검토 결과 이 앱은 MBTI 이론을 그대로 구현한 앱이라기보다, MBTI식 질문 흐름을 사용해 사용자의 취향을 카테고리별 추천 결과로 연결하는 Android 네이티브 앱입니다. 야구 구단, 게임 포지션, 영화 장르, 여행지를 각각 별도 질문 세트와 결과 매핑으로 처리하며, 각 카테고리는 30문항을 보유하고 실제 테스트에서는 10문항을 무작위로 진행합니다.
+
+## 소스 기준 기능 지도
+
+| 기능 영역 | 확인한 주요 파일 | 실제로 구현된 내용 |
+| --- | --- | --- |
+| 진입 화면 | `MainActivity.java`, `activity_main.xml` | 네 가지 추천 카테고리 카드 제공 |
+| 카테고리 선택 | `CategoryActivity.java`, `activity_category.xml` | 선택한 카테고리를 질문 화면으로 전달 |
+| 질문 진행 | `QuestionActivity.java`, `activity_question.xml` | 카테고리별 30문항 구성, 10문항 무작위 선택, 응답 점수 누적 |
+| 결과 산출 | `ResultActivity.java`, `activity_result.xml` | 누적 점수를 성향 코드로 변환하고 구단/포지션/장르/여행지 추천 |
+| 상세 설명 | `DetailActivity.java`, `activity_detail.xml` | 결과별 설명 화면 이동 |
+| 공유 | `AndroidManifest.xml`, `res/xml/file_paths.xml`, `ResultActivity.java` | 결과 화면 캡처 후 FileProvider와 공유 Intent로 외부 앱 공유 |
+| 디자인 자원 | `res/drawable`, `res/mipmap-*`, `res/menu/bottom_nav_menu.xml` | 카테고리/결과 이미지, 앱 아이콘, 하단 메뉴 구성 |
+
+## 처음 검토할 때 볼 순서
+
+1. `MainActivity.java`에서 앱이 제공하는 네 가지 추천 카테고리를 확인합니다.
+2. `QuestionActivity.java`에서 카테고리별 질문과 점수 계산 방식을 확인합니다.
+3. `ResultActivity.java`에서 점수가 실제 추천 결과로 바뀌는 매핑을 확인합니다.
+4. `AndroidManifest.xml`과 `file_paths.xml`에서 이미지 저장/공유 권한 구성을 확인합니다.
+5. `res/layout`을 보면 각 Activity가 어떤 화면으로 구성되는지 파악할 수 있습니다.
+
 ## 앱 사용 흐름
 
 1. 메인 화면에서 테스트 시작 버튼을 누릅니다.
