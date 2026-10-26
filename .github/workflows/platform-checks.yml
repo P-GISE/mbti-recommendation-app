@@ -1,0 +1,32 @@
+name: Platform checks (not production release)
+'on':
+  pull_request: null
+  push:
+    branches:
+    - main
+  workflow_dispatch: null
+permissions:
+  contents: read
+jobs:
+  security:
+    uses: ./.github/workflows/security-gate.yml
+  build:
+    needs: ["security"]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+      with:
+        distribution: temurin
+        java-version: '17'
+    - name: Unit tests, Android lint and unsigned debug APK only
+      run: bash gradlew --no-daemon testDebugUnitTest lintDebug assembleDebug
+    - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: mbti-recommendation-app-debug-${{ github.sha }}
+        path: app/build/outputs/apk/debug/*.apk
+        if-no-files-found: error
+        retention-days: 7
