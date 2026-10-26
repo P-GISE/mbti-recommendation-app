@@ -82,7 +82,7 @@
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:src="@drawable/ic_baseball"
-                            android:tint="@color/primary_text"
+                            app:tint="@color/primary_text"
                             android:contentDescription="@string/category_baseball" />
 
                         <TextView
@@ -118,7 +118,7 @@
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:src="@drawable/ic_game"
-                            android:tint="@color/primary_text"
+                            app:tint="@color/primary_text"
                             android:contentDescription="@string/category_game" />
 
                         <TextView
@@ -154,7 +154,7 @@
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:src="@drawable/ic_movie"
-                            android:tint="@color/primary_text"
+                            app:tint="@color/primary_text"
                             android:contentDescription="@string/category_movie" />
 
                         <TextView
@@ -190,7 +190,7 @@
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:src="@drawable/ic_travel"
-                            android:tint="@color/primary_text"
+                            app:tint="@color/primary_text"
                             android:contentDescription="@string/category_travel" />
 
                         <TextView
